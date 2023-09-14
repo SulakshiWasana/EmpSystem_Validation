@@ -2,7 +2,6 @@ package com.example.EmpSystem.service;
 
 import com.example.EmpSystem.dto.EmployeeDTO;
 import com.example.EmpSystem.entity.Employee;
-import com.example.EmpSystem.models.response.BadRequestHandler;
 import com.example.EmpSystem.models.response.DefaultResponse;
 import com.example.EmpSystem.repository.EmployeeRepository;
 import jakarta.transaction.Transactional;
@@ -25,8 +24,8 @@ public class EmployeeService {
     private ModelMapper modelMapper;
 
     public DefaultResponse saveEmployee(EmployeeDTO employeeDTO){
-        Employee save = employeeRepository.save(modelMapper.map(employeeDTO, Employee.class));
-        return new DefaultResponse("200","Employee saved successfully !",save);
+            Employee save = employeeRepository.save(modelMapper.map(employeeDTO, Employee.class));
+            return new DefaultResponse("200", "Employee saved successfully!", save);
     }
 
     public List<EmployeeDTO> getAllEmployees(){
